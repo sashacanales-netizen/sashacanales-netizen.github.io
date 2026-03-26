@@ -6,6 +6,19 @@ function runProgram(){
   ////////////////////////////////////////////////////////////////////////////////
   //////////////////////////// SETUP /////////////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
+const KEY = {
+  ENTER: 13,
+  LEFT: 37,
+  UP: 38,
+  RIGHT: 39,
+  DOWN: 40,
+}
+var walker = {
+  x: 0,
+  y: 0,
+  speedX: 0,
+  speedY: 0
+};
 
   // Constant Variables
   var FRAME_RATE = 60;
@@ -23,7 +36,7 @@ function runProgram(){
 
   Note: You can have multiple event listeners for different types of events.
   */
-  $(document).on('eventType', handleEvent);                          
+  $(document).on("keydown", handleKeyDown);                          
 
   ////////////////////////////////////////////////////////////////////////////////
   ///////////////////////// CORE LOGIC ///////////////////////////////////////////
@@ -44,8 +57,16 @@ function runProgram(){
   
   Note: You can have multiple event handlers for different types of events.
   */
-  function handleEvent(event) {
-
+  function handleKeyDown(event) {
+console.log(event.which);
+if(event.which === KEY.LEFT) {
+  console.log("left pressed");
+} else if(event.which === KEY.UP) {
+  console.log("up pressed");
+} else if(event.which === KEY.RIGHT) {
+  console.log("right pressed");
+} else if(event.which === KEY.DOWN) 
+  console.log("down pressed");
   }
 
   ////////////////////////////////////////////////////////////////////////////////
