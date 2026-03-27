@@ -72,8 +72,26 @@ if(event.which === KEY.LEFT) {
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
-
+function repositionGameItem() {
+  // Add the horizontal speed to the walker's x position
+  walker.x += walker.horizontalSpeed;
   
+  // Add the vertical speed to the walker's y position
+  walker.y += walker.verticalSpeed;
+}  
+console.log(walker.x, walker.y);
+function redrawGameItem() {
+  $("#walker").css("left", walker.x);
+$("#walker").css("top", walker.y);
+}
+  function newFrame() {
+  // Existing code in newFrame (e.g., drawing the walker) goes here...
+  
+  // Call the repositionGameItem function to update the walker's position
+  repositionGameItem(); 
+  
+  // More existing code in newFrame (e.g., checking for collisions) goes here...
+}
   function endGame() {
     // stop the interval timer
     clearInterval(interval);

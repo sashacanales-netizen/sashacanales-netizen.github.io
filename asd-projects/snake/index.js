@@ -17,7 +17,7 @@ var apple = {};
 
 // TODO 5, Part 1: Create the snake variable
 const snake = {};
-var colors = ["pink", "blue", "yellow", "pastel green", "purple"];
+var colors = [" pastel pink", "pastel blue", "pastel yellow", "pastel green", " pastel purple"];
 var colorIndex = 0;
 // Constant Variables
 var ROWS = 20;
