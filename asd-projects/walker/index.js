@@ -86,12 +86,14 @@ $("#walker").css("top", walker.y);
 }
   function newFrame() {
   // Existing code in newFrame (e.g., drawing the walker) goes here...
-  
+ 
   // Call the repositionGameItem function to update the walker's position
   repositionGameItem(); 
-  
+
   // More existing code in newFrame (e.g., checking for collisions) goes here...
-}
+redrawGameItem();
+} 
+
   function endGame() {
     // stop the interval timer
     clearInterval(interval);
