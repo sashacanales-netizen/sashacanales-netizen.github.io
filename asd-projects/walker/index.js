@@ -60,24 +60,21 @@ var walker = {
   function handleKeyDown(event) {
 console.log(event.which);
 if(event.which === KEY.LEFT) {
-  console.log("left pressed");
+  walker.speedX = -5;
 } else if(event.which === KEY.UP) {
-  console.log("up pressed");
+  walker.speedY = 5;
 } else if(event.which === KEY.RIGHT) {
-  console.log("right pressed");
+  walker.x = 5;
 } else if(event.which === KEY.DOWN) 
-  console.log("down pressed");
+  walker.y = -5;
   }
 
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
 function repositionGameItem() {
-  // Add the horizontal speed to the walker's x position
-  walker.x += walker.horizontalSpeed;
-  
-  // Add the vertical speed to the walker's y position
-  walker.y += walker.verticalSpeed;
+  walker.x += walker.speedX;
+  walker.y += walker.speedY;
 }  
 console.log(walker.x, walker.y);
 function redrawGameItem() {
@@ -85,12 +82,7 @@ function redrawGameItem() {
 $("#walker").css("top", walker.y);
 }
   function newFrame() {
-  // Existing code in newFrame (e.g., drawing the walker) goes here...
- 
-  // Call the repositionGameItem function to update the walker's position
   repositionGameItem(); 
-
-  // More existing code in newFrame (e.g., checking for collisions) goes here...
 redrawGameItem();
 } 
 
