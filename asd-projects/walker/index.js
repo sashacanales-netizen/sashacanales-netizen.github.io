@@ -56,6 +56,7 @@ $(document).on('keyup', handleKeyUp);
   function newFrame() {
      repositionGameItem();
 console.log(walker.x, walker.y);
+wallCollision();
 redrawGameItem()
   }
   
@@ -124,15 +125,12 @@ $("#walker").css("top", walker.y);
     $(document).off();
   }
  function wallCollision() {
-   // stop the interval timer
-    clearInterval(interval);
   // Check horizontal boundaries (left/right)
-  if (walker.x < 0 || walker.x > $("#board").width()) {
+  if (walker.x < 0 || walker.x > $("#board").width()-48) {
     walker.x -= walker.speedX;
   }
-
   // Check vertical boundaries (top/bottom)
-  if (walker.y < 0 || walker.y > $("#board").height()) {
+  if (walker.y < 0 || walker.y > $("#board").height()-48) {
     walker.y -= walker.speedY;
   }
 }
